@@ -1,6 +1,6 @@
 ---
 title: 'The canvas toDataURL'
-date: '2019-04-16'
+date: '2019-04-06'
 tags: ['javascript', 'canvas']
 draft: false
 summary: canvas toDataURL canvas의 이미지 표현을 포함하는 data url을 가져옴

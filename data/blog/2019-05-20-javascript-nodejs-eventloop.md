@@ -1,6 +1,6 @@
 ---
 title: 'Node.js Event loop'
-date: '2019-05-23'
+date: '2019-05-20'
 tags: ['javascript', 'node.js']
 draft: false
 summary: node js는 이벤트 기반의 플랫폼. libuv라는 라이브러리가 이벤트 루프 기능을 제공

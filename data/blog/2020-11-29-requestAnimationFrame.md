@@ -1,6 +1,6 @@
 ---
 title: 'requestAnimationFrame'
-date: '2020-12-04'
+date: '2020-11-29'
 tags: ['javascript']
 draft: false
 summary: requestAnimationFrame은 브라우저에게 다음에 수행할 애니메이션을 알려 브라우저 리페인트가 좀 더 원활하게 동작할 수 있게 한다.

@@ -1,6 +1,6 @@
 ---
 title: 'The canvas shadow'
-date: '2019-03-24'
+date: '2019-03-23'
 tags: ['javascript', 'canvas']
 draft: false
 summary: canvas에서 제공하는 그림자 속성을 사용하여 그림자 그리기
