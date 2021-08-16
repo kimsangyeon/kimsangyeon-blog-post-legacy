@@ -1,6 +1,6 @@
 ---
 title: 'The canvas element'
-date: '2019-03-01'
+date: '2019-03-23'
 tags: ['javascript', 'canvas']
 draft: false
 summary: HTML5에서 canvas는 그래픽들을 관리하는 컨테이너이다.

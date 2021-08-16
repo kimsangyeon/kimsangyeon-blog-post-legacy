@@ -1,6 +1,6 @@
 ---
 title: 'tsconfig'
-date: '2021-01-21'
+date: '2021-01-19'
 tags: ['javascript', 'typescript']
 draft: false
 summary: tsconfig.json 파일을 기점으로 Typescript 프로젝트가 설정된 옵션들로 컴파일된다. tsc 커멘드 입력시 상위 디렉토리 체인으로 tsconfig.json 파일을 탐색해 나간다.

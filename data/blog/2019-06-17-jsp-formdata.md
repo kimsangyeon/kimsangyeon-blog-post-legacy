@@ -1,6 +1,6 @@
 ---
 title: 'jsp form data'
-date: '2019-06-19'
+date: '2019-06-17'
 tags: ['javascript', 'jsp']
 draft: false
 summary: ajax로 전송된 multipart/form-data에서 전송시 form data에 담아서 보낸 path 정보를 jsp에서 꺼낼 수 없냐는 문의가 있었다.
