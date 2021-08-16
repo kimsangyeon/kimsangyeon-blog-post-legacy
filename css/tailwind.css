@@ -30,3 +30,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+.luffy_logo {
+  border-radius: 100%;
+}
+
+.blog_header_title {
+  line-height: 1rem;
+}
