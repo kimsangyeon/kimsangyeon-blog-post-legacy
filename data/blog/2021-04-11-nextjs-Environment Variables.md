@@ -57,9 +57,7 @@ PORT=8080
 HOST=http://$HOSTNAME:$PORT
 ```
 
-<br />
-
-실제값에 $가 있는 경우 /$ 형태로 처리한다. <br />
+<br /><br />
 
 ```tsx
 # .env
