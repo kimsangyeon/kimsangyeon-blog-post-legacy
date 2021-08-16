@@ -1,7 +1,7 @@
 ---
 title: 'Selenium Test Example'
 date: '2019-06-30'
-tags: ['javascript']
+tags: ['python', 'selenium']
 draft: false
 summary: UI 테스트가 필요해, UI 테스를 위한 도구들을 검토하기로 하였다.
 ---
