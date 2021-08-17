@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Luffy Blog',
   author: 'Luffy Yeon',
   headerTitle: 'Luffy Blog',
-  description: 'FE Developer Luffy Blog',
+  description: 'FE Programmer Development Diary',
   language: 'en-us',
   siteUrl: 'https://kimsangyeon-github-io.vercel.app/',
   siteRepo: 'https://github.com/kimsangyeon/kimsangyeon.github.io',
