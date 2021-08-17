@@ -29,8 +29,8 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
 }
 
 export const PageSEO = ({ title, description }) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.ogTagImage
+  const twImageUrl = siteMetadata.siteUrl + siteMetadata.ogTagImage
   return (
     <CommonSEO
       title={title}
@@ -43,8 +43,8 @@ export const PageSEO = ({ title, description }) => {
 }
 
 export const TagSEO = ({ title, description }) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.ogTagImage
+  const twImageUrl = siteMetadata.siteUrl + siteMetadata.ogTagImage
   const router = useRouter()
   return (
     <>
@@ -72,11 +72,7 @@ export const BlogSEO = ({ authorDetails, title, summary, date, lastmod, url, ima
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
   let imagesArr =
-    images.length === 0
-      ? [siteMetadata.socialBanner]
-      : typeof images === 'string'
-      ? [images]
-      : images
+    images.length === 0 ? [siteMetadata.ogTagImage] : typeof images === 'string' ? [images] : images
 
   const featuredImages = imagesArr.map((img) => {
     return {
