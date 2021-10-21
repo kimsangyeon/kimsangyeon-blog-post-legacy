@@ -234,7 +234,7 @@ FirstStory.args = {
 
 #### Component context
 
-**Decorator**를 사용하여 필요한 **context provider**로 스리를 "wrap" 하여 사용한다. <br />
+**Decorator**를 사용하여 필요한 **context provider**로 스토리를 "wrap" 하여 사용한다. <br />
 
 <br />
 
@@ -266,7 +266,7 @@ export const decorators = [
 
 #### CSS-in-JS like styled-components and Emotion
 
-`CSS-in-JS`를 사용하는 경우 스타일이 Javascript로 생성되고 각 컴포넌트와 함께 제공되기 때문에 스타일이 정상 동작 가능하다. <br />
+`CSS-in-JS`를 사용하는 경우 스타일이 Javascript로 생성되고 각 컴포넌트와 함께 제공되어 동작한다. <br />
 
 <br />
 
