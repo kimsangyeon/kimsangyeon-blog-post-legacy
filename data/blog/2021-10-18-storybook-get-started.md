@@ -14,13 +14,13 @@ summary:
 
 `Storybook`은 UI 개발을 위한 도구이다. 컴포넌트를 분리하여 개발을 더 빠르고 쉽게 만들도록 도와준다. 복잡한 개발 스택을 개발하며 특정 데이터를 데이터베이스에 넣거나 애플리케이션을 탐색할 필요 없이 한번에 하나의 컴포넌트에서 작업 할 수 있다. <br />
 
-<br />
+<br />₩
 
 `Storybook`을 사용하여 웹 애플리케이션에서 작은 컴포넌트 단위로 복잡한 페이지 구축도 가능하다. <br />
 
 <br />
 
-`Storybook`을 사용하면 재사용할 컴포넌트를 문서화 하고 자동으로 컴포넌트를 시각적으로 테스트하여 버그를 방지 할 수 있다. 반응형 레이아웃을 미세하게 조정하거나 접근성을 확인하는데 도움이 된느 에드온 에코 시스템으로 Storybook 확장도 가능하다. Storybook은 널리 사용되는 Javascript UI 프레임워크와도 통합되며 `Ruby on Rails`와 같은 서버 렌더링 구성 요소 프레임워크를 지원한다. <br />
+`Storybook`을 사용하면 재사용할 컴포넌트를 문서화 하고 자동으로 컴포넌트를 시각적으로 테스트하여 버그를 방지 할 수 있다. 반응형 레이아웃을 미세하게 조정하거나 접근성을 확인하는데 도움이 되는 에드온 에코 시스템으로 Storybook 확장도 가능하다. Storybook은 널리 사용되는 Javascript UI 프레임워크와도 통합되며 `Ruby on Rails`와 같은 서버 렌더링 구성 요소 프레임워크를 지원한다. <br />
 
 <br /><br />
 
@@ -70,7 +70,7 @@ yarn storybook
 
 <br />
 
-각 예제에서 요소별로 상태를 보여주는 스토리가 있다. 스토리는 ES6 모듈 기반 `CSF`(Component Story Format)으로 작성되며 **.stories.js** 또는 **.stories.ts**로 끝나는 파일에서 확인 할 수있다. <br />
+각 예제에서 요소별로 상태를 보여주는 스토리가 있다. 스토리는 ES6 모듈 기반 `CSF`(Component Story Format)으로 작성되며 **.stories.js** 또는 **.stories.ts**로 끝나는 파일에서 확인 할 수 있다. <br />
 
 <br />
 
@@ -145,15 +145,15 @@ Primary.args = {
 
 ### Toolbar
 
-`Storybook`에는 시간을 절약할 수 있는 **Canvas**에서 랜더링 방식을 조정할 수 있는 도구가 포함되어있다. <br />
+`Storybook`에는 **Canvas**에서 랜더링 방식을 조정할 수 있는 도구가 포함되어있다. <br />
 
-- 확대 축소 기능으로 컴포넌트의 크기를 시각적으로 저정하여 세부 정보 확인이 가능
+- 확대 축소 기능으로 컴포넌트의 크기를 시각적으로 지정하여 세부 정보 확인이 가능
 - 컴포넌트 뒤에 랜더링된 배경을 변경하여 다양한 시각적 컨텍스트 랜더링 확인 가능
 - 뷰포트로 다양한 치수와 방향으로 컴포넌트 랜더링 가능
 
 <br />
 
-**Docs** 탭에서는 컴포넌트에 대한 자동 문서가 생성되어 표시된다. 해당 문서는 재사용 가능한 컴포넌트를 팀과 공유할때 유용하다. <br />
+**Docs** 탭에서는 컴포넌트에 대한 문서가 생성되어 표시된다. 해당 문서는 재사용 가능한 컴포넌트를 팀과 공유할때 유용하다. <br />
 
 <br />
 
@@ -167,8 +167,8 @@ Primary.args = {
 
 <br />
 
-- **Controls**: 컴포넌트의 요소의 arguments를 동적으로 입력할 수 있다.
-- **Actions**: 상호작용이 콜백을 톨해 올바른 출력을 생성하는지 확인하는데 도움을 준다. 예로는 로그아웃 버튼을 클릭하면 onLogout 콜백이 트리거 되는지 확인 할 수 있다.
+- **Controls**: 컴포넌트 요소의 arguments를 동적으로 입력할 수 있다.
+- **Actions**: 인터렉션이 콜백을 통해 올바른 출력을 생성하는지 확인하는데 도움을 준다. 예로는 로그아웃 버튼을 클릭하면 onLogout 콜백이 트리거 되는지 확인 할 수 있다.
 
 <br />
 
@@ -212,7 +212,7 @@ FirstStory.args = {
 
 <br />
 
-컴포넌트를 분리하여 랜더링전 프로젝트에 추가 요구 사항이 있을 수 있다.이러한 설정을 **customizing configuration** 할 수 있도록 제공한다. <br />
+컴포넌트를 분리하여 랜더링전 프로젝트에 추가 요구 사항이 있을 수 있다. 이러한 설정을 **customizing configuration** 할 수 있도록 제공한다. <br />
 
 <br /><br />
 
@@ -222,13 +222,13 @@ FirstStory.args = {
 
 - [Presets](https://storybook.js.org/docs/react/addons/addon-types) 설정은 **Create React App**, **SCSS** 및 **Ant Design**을 위한 설정이 있다.
 - `Storybook`에 대한 [Babel](https://storybook.js.org/docs/react/configure/babel/#custom-babel-config) 구성을 지정하고 가능한 경우 자동으로 프로젝트의 구성을 사용하려고 시도한다.
-- `Storybook`에서 사용하는 [webpack](https://storybook.js.org/docs/react/configure/webpack/) 구성을 조정한다,
+- `Storybook`에서 사용하는 [webpack](https://storybook.js.org/docs/react/configure/webpack/) 구성을 조정한다.
 
 <br /><br />
 
 #### Runtime configuration
 
-`Storybook`이 빌드되지만 브라우저상에서 오류가 발생하는 문제가 발생 할 수 있다. Storybook은 최신 브라우저와 IE11을 지원하지만 컴포넌트가 정상적으로 동작하는지 확인하기 위해서는 Babel 및 webpack 설정을 확인해야 한다. <br />
+`Storybook`이 빌드는 되지만 브라우저상에서 오류가 발생하는 문제가 발생 할 수 있다. Storybook은 최신 브라우저와 IE11을 지원하지만 컴포넌트가 정상적으로 동작하는지 확인하기 위해서는 Babel 및 webpack 설정을 확인해야 한다. <br />
 
 <br /><br />
 
