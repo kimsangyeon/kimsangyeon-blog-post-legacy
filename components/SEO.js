@@ -24,6 +24,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={twImage} />
+      <meta name="google-site-verification" content="74QCp_BPkolV75egsINIZQI9Fd93OaehZUkRwC5pWB0" />
     </Head>
   )
 }
