@@ -1,6 +1,6 @@
 ---
 title: 'React 공식 문서 리뉴얼 번역 참여기'
-date: '2021-01-20'
+date: '2022-01-20'
 tags: ['javascript', 'react']
 draft: false
 summary:
