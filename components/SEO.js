@@ -117,7 +117,7 @@ export const BlogSEO = ({ authorDetails, title, summary, date, lastmod, url, ima
         url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
       },
     },
-    description: summary,
+    description: summary || title,
   }
 
   const twImageUrl = featuredImages[0].url
@@ -126,7 +126,7 @@ export const BlogSEO = ({ authorDetails, title, summary, date, lastmod, url, ima
     <>
       <CommonSEO
         title={title}
-        description={summary}
+        description={summary || title}
         ogType="article"
         ogImage={featuredImages}
         twImage={twImageUrl}
