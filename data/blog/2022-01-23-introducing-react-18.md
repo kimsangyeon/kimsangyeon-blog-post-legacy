@@ -8,7 +8,7 @@ summary:
 
 # Introducing React 18
 
-`React 18 버전`이 수면위로 올라옴에 따라 늦었지만 해당 내용을 정리해 보고자 한다. 팀내에서 아직 beta 버전이지만 `suspense`에 대한 사용하고싶은 니즈(needs)가 있어 베타버전이지만 사용을 간략하게 해보았고 `production` 레벨까지 반영되지는 못했지만 한 가지 문제를 제외하고는 사용하는데 문제는 없었다. 한 가지 있었던 문제에 대해서는 아래에서 정리해보도록 하겠다. <br />
+`React 18 버전`이 수면위로 올라옴에 따라 늦었지만 해당 내용을 정리해 보고자 한다. 팀내에서 아직 beta 버전이지만 `Suspense`에 대한 사용하고싶은 니즈(needs)가 있어 베타버전이지만 사용을 간략하게 해보았고 `production` 레벨까지 반영되지는 못했다. <br />
 
 <br />
 
@@ -159,8 +159,84 @@ elm.addEventListener('click', () => {
 
 <br /><br />
 
+### Upgrading to React 18 on the server
+
+`React 18 버전`부터는 사용하는 API에 따라서 `Suspense` 지원이 달라지게 된다. 기존 React는 Suspense를 전혀 지원하지 않았지만 `renderToString`, `renderToNodeStream`, `renderToPipeableStream` API를 사용하여 지원 받을 수 있다.
+
+- `renderToString`: 제한된 Suspense 지원
+- `renderToNodeStream`: 전체 Suspense 지원하지만 Deprecated
+- `renderToPipeableStream`: 전체 Suspense 지원 및 스트리밍 포함
+
+<br />
+
+기존에 사용되던 `renderToString`는 계속 지원을 하지만 새로운 기능에 대한 개선이 없으므로 `renderToPipeableStream` 권장한다.
+
+<br />
+
+기존 React에서 `Suspense` 사용시 오류가 발생하였지만 `React 18 버전`부터는 `renderToString`에서 제한된 `Suspense`를 지원한다. `renderToString` 동안 일시중단 후에 Suspense를 대체 HTML로 렌더링을 진행, JS가 로드된 이후 클라이언트에서 렌더링을 시도한다. 이러한 동작을 `hydration`이라고 하며 간단하게 순서대로 설명해 보자면 서버에서 Data fetching 하여 렌더링된 HTML을 내려보낸다. 브라우저는 HTML을 렌더링하여 노출한 이후 Javascript 코드를 다운로드하여 렌더링된 HTML과 연결시키게 된다.
+
+<br />
+
+`React 18 버전`에서는 `renderToPipeableStream` 사용을 권장하고 있다. Data fetching을 포함한 `Suspense`에 대한 완전한 기능을 지원하고 그리고 코드 스플리팅에 따른 lazy 로드시 콘텐츠 깜박임 현상도 없앴다고 한다. SSR 렌더링 방식에 있어 서버에서 내려주는 페이지 전체의 HTML을 렌더링하여 `hydration`하는 방식과 다르게 페이지 내의 각 영역별로 나뉘어 `hydration` 진행이 가능해진다.
+
+<br /><br />
+
+### Behavioral changes to Suspense in React 18
+
+`Suspense`에 대한 지원은 이전 버전에서도 제공하긴하였지만 `React 18 버전`에서는 조금 다르게 동작할 수 있지만 마이그레이션시 큰 부담은 없을 정도의 변경이라고 한다.
+
+<br />
+
+아래 예로 이전(legacy)과 현재(concurrent) `Suspense`를 비교 설명하는 글이 있는데 이전에 동작은 ComponentThatSuspends에 상관없이 Sibling 컴포넌트는 DOM에 마운트되며 effects/lifecycles이 동작하고 숨김처리가 된다고 한다. 현재는 Sibling 컴포넌트는 DOM에 마운트 되지 않고 ComponentThatSuspends가 해결 될때까지 기다린다고 한다.
+
+```jsx
+<Suspense fallback={<Loading />}>
+  <ComponentThatSuspends />
+  <Sibling />
+</Suspense>
+```
+
+이전 버전의 동작으로 인해 몇몇 라이브러리에서는 [이슈](https://github.com/facebook/react/issues/14536)가 있었다고 한다. 해당 내용을 보니 위와 같은 컴포넌트 구성을 일반적으로 할 수 있다고도 생각된다.
+
+<br /><br />
+
+#### Replacing render with createRoot
+
+변경되는 개선사항 이외에 `React 18 버전`에서는 Root 생성 API에 대한 변화도 있다. 예전 버전에서는 `ReactDOM.render`로 사용되던 API가 `ReactDOM.createRoot`로 변경되었다.
+
+<br />
+
+해당 변경으로 렌더링시 container를 항상 전달해야하는 부분이 수정되었고 부분적 `hydration` 지원이 가능하다고 한다.
+
+<br /><br />
+
+## Concurruent features
+
+Concurrent feature에 대한 opt-in 지원도 `React 18 버전`에 릴리즈 된다고 한다.
+
+- `startTransition`: 비용이 많이드는 상태 전환 중에 UI에 대한 응답을 유지 할 수 있도록 해준다.
+- `useDeferredValue`: 우선순위가 떨어지는 부분에 대한 업데이트를 연기 할 수 있다.
+- `SuspenseList`: 로딩 표시가 나타나는 순서를 조정 할 수 있다.
+- 선택적 `hydration`을 통한 SSR: 앱을 더 빠르게 로드하고 상호 작용 할 수 있다.
+
+<br />
+
+위와 같은 사항은 Strict Mode를 활성화 하지 않고도 기능을 사용 할 수 있다고 한다.
+
+<br /><br />
+
+추가적으로 `Suspense`가 기본적인 기능에 포함됨에 따라 Data Fetching에 대한 질문도 많아서 인지 What about Suspense for data fetching? 내용도 있었다. 해당 내용에서는 Data Fetching에 대한 솔루션은 포함되지 않을 가능성이 높다고 얘기하고 있으며 해당 부분을 위해서는 서버 구성 요소 및 기본 제공 캐시가 포함되어야하여 해당 프로젝트는 아직 진행중이라고 언급되어있다.
+
+<br /><br />
+
+많은 기능이 개선되고 추가됨에 따라 직접 사용해보며 디테일한 기능에 대한 공부를 별도로 해야할 것 같다. 최근 프로젝트에서 `Suspense` 사용을 위해 `React 18 beta 버전`으로 올리고 사용해보려했지만 API 연동중에 프로젝트가 중단되는 상황이 발생하여... 실질적인 `Suspense` 기능은 사용해 보지 못한 상태다. 이후에 `Suspense`를 포함한 `React 18 버전` 기능들을 사용하고 정리해 보아야겠다.
+
 [Ref]:
 
 - [Introducing React 18](https://github.com/reactwg/react-18/discussions/4)
+- [Automatic batching for fewer renders in React 18](https://github.com/reactwg/react-18/discussions/21)
+- [Upgrading to React 18 on the server](https://github.com/reactwg/react-18/discussions/22)
+- [Behavioral changes to Suspense in React 18](https://github.com/reactwg/react-18/discussions/7)
+- [Replacing render with createRoot](https://github.com/reactwg/react-18/discussions/5)
 
 <br /><br /><br />
