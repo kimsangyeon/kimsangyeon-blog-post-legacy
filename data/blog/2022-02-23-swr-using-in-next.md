@@ -18,17 +18,17 @@ summary:
 
 ## SWR 도입
 
-일단 `swr`을 사용해보자의 시작은 `redux` + `saga`를 사용하며 코드량을 계속해서 늘리는 action, reducer, saga의 생성과 이를 간편화 하기 위해 generator의 생성... 그리고 데이터의 isLoading, isFetching, fulfilled, rejected 등의 상태를 표시하기 위해 다시 데이터를 한 번 더 랩핑... 너무나도 복잡해진 상태 추적과 불필요하게 전역에 상태를 관리하고 있다는 생각이 들기 시작하였다.
+일단 `swr`을 사용해보자의 시작은 `redux` + `saga`를 사용하며 코드량을 계속해서 늘리는 action, reducer, saga의 생성과 이를 간편화 하기 위해 generator의 생성... 그리고 데이터의 isLoading, isFetching, fulfilled, rejected 등의 상태를 표시하기 위해 다시 데이터를 한 번 더 랩핑... 너무나도 복잡해진 상태 추적과 불필요하게 전역에 상태를 관리하고 있다는 생각에서 부터 시작되었다.
 
 <br />
 
 ### swr vs react-query
 
-이후 다른 프로젝트에서 `swr`을 사용해보는 기회가 생겨 사용해보았고, 간단하게 데이터 fetching 하여 상태를 관리할 수 있는 부분에 매료되었다. 이때 기존의 프로젝트에 `swr`을 도입해야겠다고 생각하며 `react-query`는 어떨까 하는 생각도 들어 두 가지를 비교하는 여러 글을 살펴보았다. 물론 두 가지 이외에도 많은 상태관리 라이브러리가 있지만 `Next.js`에서 가장 많이 사용되는 두 가지를 놓고 비교를 하였다.
+이후 다른 프로젝트에서 `swr`을 사용해보는 기회가 생겨 사용해보았고, 간단하게 데이터 fetching하여 상태를 관리할 수 있는 부분에 매료되었다. 이때 기존의 프로젝트에 `swr`을 도입해야겠다고 생각하며 `react-query`는 어떨까 하는 생각도 들어 두 가지를 비교하는 여러 글을 살펴보았다. 물론 두 가지 이외에도 많은 상태관리 라이브러리가 있지만 `Next.js`에서 가장 많이 사용되는 두 가지를 놓고 비교를 하였다.
 
 <br />
 
-아래 각 라이브러리의 다운로드 수를 비교해보았을 때 `react-query`가 2021년 초를 기점으로 점점 차이를 벌리고 있는 것을 볼 수 있다. 실제로 여러 사이트에서 `swr` vs `react-query`라는 글에서 `react-query`를 선호하는 글들이 많았다. 대부분의 이유는 `swr`에서 지원하는 기능이 너무 가볍고 좀 더 다양한 기능을 `react-query`에서 지원하기 때문이라는 이유였다.
+라이브러리의 [다운로드 수](https://www.npmtrends.com/react-query-vs-swr-vs-@rtk-incubator/rtk-query)를 비교해보았을 때 `react-query`가 2021년 초를 기점으로 점점 차이를 벌리고 있는 것을 볼 수 있다. 실제로 여러 사이트에서 `swr` vs `react-query`라는 글에서 `react-query`를 선호하는 글들이 많았다. 대부분의 이유는 `swr`에서 지원하는 기능이 너무 가볍고 좀 더 다양한 기능을 `react-query`에서 지원하기 때문이라는 이유였다.
 
 <br />
 
@@ -80,9 +80,7 @@ return (
 
 <br />
 
-다른 여러 차이점이 있지만 [Comparison | React Query vs SWR vs Apollo vs RTK Query](https://react-query.tanstack.com/comparison)에서 확인하거나 예제들을 참고하면 좋을 것 같다. 그리고 `swr`과 `react-query` 다운 로드 수를 비교해보았을 때 `react-query`가 두 배가량 높은 것을 확인 할 수 있었다.
-
-- [@rtk-incubator/rtk-query vs react-query vs swr](https://www.npmtrends.com/react-query-vs-swr-vs-@rtk-incubator/rtk-query)
+다른 여러 차이점이 있지만 [Comparison | React Query vs SWR vs Apollo vs RTK Query](https://react-query.tanstack.com/comparison)에서 확인하거나 예제들을 참고하면 좋을 것 같다. 그리고 `swr`과 `react-query` [다운로드 수](https://www.npmtrends.com/react-query-vs-swr-vs-@rtk-incubator/rtk-query)를 비교해보았을 때 `react-query`가 두 배가량 높은 것을 확인 할 수 있었다.
 
 <br />
 
@@ -92,7 +90,7 @@ return (
 
 ## SWR in Next.js
 
-`Next.js`에서 `swr`을 사용하는 것 자체는 어렵지 않았다. `Next.js`와 `swr` 문서, 예제에서 각 환경에 맞기 쉽게 확인 할 수 있었기 때문이다.
+`Next.js`에서 `swr`을 사용하는 것 자체는 어렵지 않았다. `Next.js`와 `swr` 문서, 예제에서 각 환경을 예로 들어 작성되어있기 때문이였다.
 
 <br />
 
@@ -141,7 +139,7 @@ export async function getServerSideProps() {
 
 #### storybook with express proxy
 
-일단 `swr`을 사용함으로 페이지 내에서 API 호출하여 데이터 가져오는 부분의 대응이 필요하였다. API 호출은 `storybook`에서 렌더링 되는 페이지에서 인증처리는 별도로 이루어지고 있지 않기 때문에 인증 오류가 발생하였고 `storybook`에서 렌더링 되는 페이지를 인증 처리하는 것은 불필요하다고 생각했고 `.storybook/middleware`에 `express` 환경을 구성한 후 proxy 설정하여 mock 데이터를 내려주는 형태로 수정하였다.
+일단 `swr`을 사용함으로 페이지 내에서 API 호출하여 데이터 가져오는 부분의 대응이 필요하였다. API 호출은 `storybook`에서 렌더링 되는 페이지에서 인증처리는 별도로 이루어지고 있지 않기 때문에 인증 오류가 발생하였고 `storybook`에서 렌더링 되는 페이지를 인증 처리하는 것은 불필요하다고 생각했다. 그래서 `.storybook/middleware`에 `express` 환경을 구성한 후 proxy 설정하여 mock 데이터를 내려주는 형태로 수정하였다.
 
 <br />
 
@@ -191,7 +189,6 @@ import { rest } from 'msw'
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
 
 export const Template = (args) => <Page {...args} />
-
 ;<Canvas>
   <Story
     name="page"
