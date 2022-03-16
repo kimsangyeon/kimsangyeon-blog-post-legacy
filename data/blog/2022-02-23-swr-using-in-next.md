@@ -1,7 +1,7 @@
 ---
 title: 'Next.js에서 SWR 사용해보기'
 date: '2022-02-23'
-tags: ['javascript', 'react', 'next', 'swr']
+tags: ['javascript', 'react', 'next.js', 'swr']
 draft: false
 summary:
 ---
