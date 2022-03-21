@@ -214,7 +214,7 @@ export const Template = (args) => <Page {...args} />
 
 기존에 작성되어있던 `storybook`에서 구성한 `redux` store 코드와 `.storybook/middleware`에 작성한 express proxy, 그리고 mock 데이터를 제거하며 작업을 완료 할 수 있었다.
 
-<br />
+<br /><br />
 
 ## In Conclusion
 
