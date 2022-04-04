@@ -176,7 +176,7 @@ elm.addEventListener('click', () => {
 기존 React에서 `Suspense` 사용 시 오류가 발생하였지만 `React 18 버전`부터는 `renderToString`에서 제한된 `Suspense`를 지원한다. `renderToString` 동안 일시중단 후에 Suspense를 대체 HTML로 렌더링을 진행, JS가 로드된 이후 클라이언트에서 렌더링을 시도한다. 이러한 동작을 `hydration`이라고 하며 간단하게 순서대로 설명해 보자면 서버에서 Data fetching 하여 렌더링 된 HTML을 내려보낸다. 브라우저는 HTML을 렌더링하여 노출한 이후 Javascript 코드를 다운로드하여 렌더링 된 HTML과 연결하게 된다.
 <br />
 
-`React 18 버전`에서는 `renderToPipeableStream` 사용을 권장하고 있다. Data fetching을 포함한 `Suspense`에 대한 완전한 기능을 지원하고 코드 수플 리팅에 따른 lazy 로드 시 콘텐츠 깜박임 현상도 없앴다고 한다. SSR 렌더링 방식에 있어 서버에서 내려주는 페이지 전체의 HTML을 렌더링하여 `hydration`하는 방식과 다르게 페이지 내의 영역별로 나뉘어 `hydration` 진행이 가능해진다.
+`React 18 버전`에서는 `renderToPipeableStream` 사용을 권장하고 있다. Data fetching을 포함한 `Suspense`에 대한 완전한 기능을 지원하고 코드 스플리팅에 따른 lazy 로드 시 콘텐츠 깜박임 현상도 없앴다고 한다. SSR 렌더링 방식에 있어 서버에서 내려주는 페이지 전체의 HTML을 렌더링하여 `hydration`하는 방식과 다르게 페이지 내의 영역별로 나뉘어 `hydration` 진행이 가능해진다.
 
 <br /><br />
 
@@ -195,7 +195,7 @@ elm.addEventListener('click', () => {
 </Suspense>
 ```
 
-이전 버전의 동작으로 인해 몇몇 라이브러리에서는 [이슈](https://github.com/facebook/react/issues/14536)가 있었다고 한다. 해당 내용을 보니 위와 같은 컴포넌트 구성을 일반적으로 할 수 있다고도 생각된다.
+이전 버전의 동작으로 인해 몇몇 라이브러리에서는 [이슈](https://github.com/facebook/react/issues/14536)가 있었다고 한다. 해당 내용을 보니 위와 같은 컴포넌트 구성을 일반적으로 충분히 사용할 수 있다고 생각된다.
 
 <br /><br />
 
