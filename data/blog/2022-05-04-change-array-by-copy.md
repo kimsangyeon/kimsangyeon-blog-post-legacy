@@ -10,17 +10,17 @@ summary:
 
 | 해당 내용은 개인적인 공부를 위한 글로 오역 및 개인적인 의견이 반영된 내용이 있을 수 있으니 참고하여 주시기 바라며 문제가 되는 내용이 있는 경우 메일로 피드백 부탁합니다.
 
-`ts39` proposal에서 `Stage 3` 내용중에 `Change Array by Copy`라는 제안을 보고 표준에 포함되고나면 많이 사용하게 될 것 같은 내용이라 정리를 해봐야겠다고 생각했다. 단순히 `Change Array by Copy` README.md를 번역하는 내용이니 정확한 내용은 [원문 제안서](https://github.com/tc39/proposal-change-array-by-copy)를 확인하길 바란다. <br />
+`ts39` proposal에서 `Stage 3` 내용 중에 `Change Array by Copy`라는 제안을 보고 표준에 포함되고 나면 많이 사용하게 될 것 같은 내용이라 정리를 해봐야겠다고 생각했다. 단순히 `Change Array by Copy` README.md를 번역하는 내용이니 정확한 내용은 [원문 제안서](https://github.com/tc39/proposal-change-array-by-copy)를 확인하길 바란다. <br />
 
 <br />
 
-`Array.prototype`과 `TypedArray.prototype`에 대한 추가 메소드를 제공하여 변경사항이 적용된 복사된 새로운 배열을 반환 받을 수 있게 한다.
+`Array.prototype`과 `TypedArray.prototype`에 대한 추가 메소드를 제공하여 변경 사항이 적용된 복사된 새로운 배열을 반환 받을 수 있게 한다.
 
 <br /><br />
 
 ### Status
 
-해당 제안은 현재 [Stage 3](https://github.com/tc39/proposals#stage-3)이다.
+해당 제안은 현재(2022.05.04) [Stage 3](https://github.com/tc39/proposals#stage-3)이다.
 
 - [해당 제안 텍스트 문서](https://tc39.es/proposal-change-array-by-copy/)
 
@@ -37,7 +37,7 @@ summary:
 
 <br />
 
-위의 모든 메서드는 대상 배열을 유지하고 변경사항이 반영된 복사본 배열을 반환한다. <br />
+위의 모든 메서드는 대상 배열을 유지하고 변경 사항이 반영된 복사본 배열을 반환한다. <br />
 
 <br />
 
@@ -50,7 +50,7 @@ summary:
 
 <br />
 
-해당 메소드는 `TypedArray`의 하위 클래스에서도 사용 할 수 있다.
+해당 메소드는 `TypedArray`의 하위 클래스에서도 사용할 수 있다.
 
 - Int8Array
 - Uint8Array
@@ -113,7 +113,7 @@ correctionNeeded // => [1, 1, 3]
 
 ### In Conclusion
 
-정말 오랜만에 `tc39/proposals`를 확인해봤다. 정말 엄청나게 많은 라이브러리도 만들어지고 있지만 Javascript도 계속해서 업그레이드 되는것에 관심을 지속적으로 갖고 놓치지 않아야겠다. 이미 표준으로 추가되었지만 놓치고 있는 부분들도 많을 것으로 생각되지만 차근차근 다시 쫓아야겠다.
+정말 오랜만에 `tc39/proposals`를 확인해봤다. 정말 엄청나게 많은 라이브러리도 만들어지고 있지만 Javascript도 계속해서 업그레이드되는 것에 관심을 지속해서 갖고 놓치지 않아야겠다. 이미 표준으로 추가되었지만 놓치고 있는 부분들도 많을 것으로 생각되지만 차근차근 다시 쫓아야겠다.
 
 <br /><br />
 
