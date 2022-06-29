@@ -1,5 +1,11 @@
 const projectsData = [
   {
+    title: '카카오톡 전자증명서',
+    description: `카카오톡 전자증명서 서비스 개발 담당. 카카오톡에서 전자증명서를 발급받고 제출할 수 있도록 개발하였습니다.`,
+    imgSrc: '/static/images/projects/digitaldocs.png',
+    href: 'https://www.kakaocorp.com/page/detail/9700',
+  },
+  {
     title: '카카오페이구매 파트너센터',
     description: `카카오페이구매 파트너센터 서비스를 담당. 판매점 판매관리, 정산관리 등 파트너분들이 페이구매 판매점의 정보를 쉽게 파악하고 관리하도록 개발하였습니다.`,
     imgSrc: '/static/images/projects/partner.png',
