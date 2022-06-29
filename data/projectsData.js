@@ -25,9 +25,7 @@ const projectsData = [
   },
   {
     title: 'Synap Office',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten handphones with this simple yet affordable solution.`,
+    description: `사이냅 오피스는 웹 브라우저에서 문서를 편집할 수 있도록 도와주는 오피스 서비스입니다. 오피스 서비스중 슬라이드 서비스를 담당하였으며 슬라이드와 도형 모델 편집 및 랜더링 개발을 하였습니다.`,
     imgSrc: '/static/images/projects/office.jpg',
     href: 'http://www.synapsoft.co.kr/office',
   },
