@@ -22,6 +22,9 @@ const siteMetadata = {
     simpleAnalytics: false, // true or false
     googleAnalyticsId: 'G-3HBY5DYT64', // e.g. UA-000000-2 or G-XXXXXXX
   },
+  adsense: {
+    client: 'ca-pub-8178516170789161',
+  },
   comment: {
     // Select a provider and use the environment variables associated to it
     // https://vercel.com/docs/environment-variables
