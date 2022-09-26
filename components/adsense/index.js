@@ -6,7 +6,8 @@ const AdsScript = () => {
   return (
     <>
       <Script
-        strategy="lazyOnload"
+        async
+        strategy="beforeInteractive"
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteMetadata.adsense.client}`}
         crossorigin="anonymous"
       />
