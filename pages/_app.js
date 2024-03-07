@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <Analytics />
-      {/* <Adsense /> */}
+      <Adsense />
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>
